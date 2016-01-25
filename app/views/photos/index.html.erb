@@ -1,0 +1,11 @@
+<%= link_to "Add new photo", "photos/new" %>
+
+<h1>All Photos (<%= @photos.size %>)</h1>
+
+<% @photos.each do |photo| %>
+<p>
+  <%= photo.title %> by <%= photo.author %>
+</p>
+<!-- rails img command with photo.url -->
+<%= link_to image_tag(photo.url), "/photos/#{photo.id}" %>
+<% end %>
